@@ -11,22 +11,17 @@ class PlayScene : public MainWindow
     Q_OBJECT
 public:
     PlayScene(int level, QWidget *parent = nullptr);
-    // 翻动row行，col列的硬币
     void flip(int row, int col);
-    // 判断胜利
     void judgeWin();
 
 signals:
-    // 点击返回按钮发射的信号
     void backBtnClicked();
 
 protected:
     void paintEvent(QPaintEvent *event);
 
 private:
-    // 胜利的状态
     bool mHasWin;
-    // 硬币按钮数组
     CoinButton *mCoins[4][4];
 };
 
